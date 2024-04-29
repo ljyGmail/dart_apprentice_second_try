@@ -71,4 +71,82 @@ void main(List<String> arguments) {
   print(max(5, 10));
   print(min(-5, -10));
   print(max(sqrt(2), pi / 2));
+  print('------------------------------');
+
+  // # Naming Data
+  // ## Variables
+  int number = 10;
+  print(number);
+
+  number = 15;
+  print(number);
+
+  double apple = 3.14159;
+  print(apple);
+
+  // Every is an object:
+  print(10.isEven);
+  print(3.14159.round());
+
+  // ### Type Safety
+  int myInteger = 10;
+  // myInteger = 3.14159; // No, no, no. That's not allowed :]
+  print(myInteger);
+
+  num myNumber;
+  myNumber = 10; // OK
+  myNumber = 3.14159; // OK
+  // myNumber = 'ten'; // No, no, no.
+  print(myNumber);
+
+  dynamic myVariable;
+  myVariable = 10; // OK
+  myVariable = 3.14159; // OK
+  myVariable = "ten"; // OK
+  print(myVariable);
+
+  // ### Type Inference
+  var someNumber = 10;
+  someNumber = 15;
+  // someNumber = 3.14159; // No, no, no.
+  print(someNumber);
+
+  // ## Constants
+  // ### Const Constants
+  const myConstant = 10;
+  // myConstant = 0; // NOt allowed.
+  print(myConstant);
+
+  // ### Final Constants
+  final hoursSinceMidnight = DateTime.now().hour;
+  // hoursSinceMidnight = 0; // Not allowed.
+  print(hoursSinceMidnight);
+
+  // ## Using Meaningful Names
+  print('------------------------------');
+
+  // # Increment and Decrement
+  var counter = 0;
+
+  counter += 1; // => 1
+  print(counter);
+
+  counter -= 1; // => 0
+  print(counter);
+
+  // The above code is same as following:
+  counter = counter + 1;
+  counter = counter - 1;
+
+  counter++;
+  print(counter);
+  counter--;
+  print(counter);
+
+  double myValue = 10;
+  myValue *= 3; // same as myValue = myValue * 3;
+  print(myValue); // => 30.0
+
+  myValue /= 2; // same as myValue = myValue / 2;
+  print(myValue); // => 15.0
 }
