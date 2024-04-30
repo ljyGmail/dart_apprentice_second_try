@@ -7,6 +7,15 @@ void main() {
   print('------------------------------');
   stringsAndCharactersInDart();
   print('------------------------------');
+  singleQuotesVsDoubleQuotes();
+  print('------------------------------');
+  concatenation();
+  print('------------------------------');
+  interpolation();
+  print('------------------------------');
+  multiLineStrings();
+  print('------------------------------');
+  insertingCharactersFromTheirCodes();
 }
 
 // # How Computers Represent Strings
@@ -54,4 +63,66 @@ void stringsAndCharactersInDart() {
 
   // ### Adding the Characters Package
   print(family.characters.length); // => 1
+}
+
+// # Single Quotes vs. Double Quotes
+void singleQuotesVsDoubleQuotes() {
+  print('I like cats');
+  print("I like cats");
+  print("my cat's food");
+  print('my cat\'s food');
+}
+
+// # Concatenation
+void concatenation() {
+  var message = 'Hello' + ' my name is ';
+  const name = 'Ray';
+  message += name;
+  print(message); // => 'Hello my name is Ray'
+}
+
+// # Interpolation
+void interpolation() {
+  const name = 'Ray';
+  const introduction = 'Hello my name is $name';
+  print(introduction);
+
+  const oneThird = 1 / 3;
+  const sentence = 'One third is $oneThird.';
+  print(sentence);
+
+  final sentence2 = 'One third is ${oneThird.toStringAsFixed(3)}.';
+  print(sentence2);
+}
+
+// # Multi-Line Strings
+void multiLineStrings() {
+  const bigString = '''
+You can have a string
+that contains multiple
+lines
+by
+doing this.''';
+  print(bigString);
+
+  const oneLine = 'This is only '
+      'a single '
+      'line '
+      'at runtime.';
+  print(oneLine);
+
+  const oneLine2 = 'This is only ' + 'a single ' + 'line ' + 'at runtime.';
+  print(oneLine2);
+
+  const twoLines = 'This is\ntwo lines.';
+  print(twoLines);
+
+  const rawString = r'My name \n is $name';
+  print(rawString);
+}
+
+// # Inserting Characters From Their Codes
+void insertingCharactersFromTheirCodes() {
+  print('I \u2764 Dart\u0021');
+  print('I love \u{1F3AF}');
 }
