@@ -1,10 +1,12 @@
-import 'dart:math';
-
 void main() {
   functionBasics();
   print('------------------------------');
   parameters();
   print('------------------------------');
+  optionalTypes();
+  print('------------------------------');
+  arrowFunctions();
+  printTripled2(123);
 }
 
 // # Function Basics
@@ -85,3 +87,50 @@ bool withinTolerance3({
 }) {
   return min <= value && value <= max;
 }
+
+// # Writing Good Functions
+// ## Avoiding Side Effects
+void hello() {
+  print('Hello'); // side effect
+}
+
+String hello2() {
+  return 'Hello'; // no side effect
+}
+
+var myPreciousData = 5782;
+
+String anInnocentLookingFunction(String name) {
+  myPreciousData = -1;
+  return 'Hello, $name. Heh, heh, heh.';
+}
+
+// ## Doing Only One Thing
+// ## Choosing Good Names
+
+// # Optional Types
+void optionalTypes() {
+  print(compliment2(123));
+}
+
+compliment2(number) {
+  return '$number is a very nice number.';
+}
+
+// # Arrow Functions
+void arrowFunctions() {
+  print(add2(3, 4));
+}
+
+int add(int a, int b) {
+  return a + b;
+}
+
+int add2(int a, int b) => a + b;
+
+void printTripled(int number) {
+  final tripled = number * 3;
+  print(tripled);
+}
+
+void printTripled2(int number) => print(number * 3);
